@@ -14,6 +14,9 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Studnet List</h2>
+                <div style="float:right">
+                    <a href="{{url('add-student')}}" class="btn btn-primary">Add</a>
+                </div>
                 <table class="table">
                     <tr>
                         <th>#</th>
@@ -21,6 +24,7 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Action</th>
                     </tr>
                     @foreach ($data as $item)
                         <tr>
@@ -29,6 +33,7 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->address}}</td>
+                            <td>Edit | Delete</td>
                         </tr>
                     @endforeach
                 </table>
