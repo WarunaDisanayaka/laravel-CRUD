@@ -33,7 +33,8 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->address}}</td>
-                            <td>Edit | Delete</td>
+                            <td><a href="{{url('edit-student/'.$item->id)}}" class="btn btn-primary">Edit</a>
+                                &nbsp;<a href="{{url('delete-student/'.$item->id)}}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     @endforeach
                 </table>

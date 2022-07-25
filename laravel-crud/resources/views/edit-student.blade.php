@@ -18,11 +18,12 @@
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form action="{{url('save-student')}}" method="post">
+                <form action="{{url('update-student')}}" method="post">
                     @csrf
+                    <input type="hidden" name="id" value="{{$data->id}}">
                     <div class="col-md-6">
                         <label class="form-lable">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter Name" value="{{old('name')}}">
+                        <input type="text" name="name" class="form-control" placeholder="Enter Name" value="{{$data->name}}">
                         @error('name')
                             <span style="color: red;">{{$message}}</span>
                         @enderror
@@ -30,7 +31,7 @@
 
                     <div class="col-md-6">
                         <label class="form-lable">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Enter Name" value="{{old('email')}}">
+                        <input type="text" name="email" class="form-control" placeholder="Enter Name" value="{{$data->email}}">
                          @error('email')
                             <span style="color: red;">{{$message}}</span>
                         @enderror
@@ -38,7 +39,7 @@
 
                     <div class="col-md-6">
                         <label class="form-lable">Phone</label>
-                        <input type="text" name="phone" class="form-control" placeholder="Enter Name" value="{{old('phone')}}">
+                        <input type="text" name="phone" class="form-control" placeholder="Enter Name" value="{{$data->phone}}">
                          @error('phone')
                             <span style="color: red;">{{$message}}</span>
                         @enderror
@@ -46,7 +47,7 @@
 
                     <div class="col-md-6">
                         <label class="form-lable">Address</label>
-                        <textarea name="address" class="form-control" placeholder="Enter Address" cols="10" rows="5" value="">{{old('address')}}</textarea>
+                        <textarea name="address" class="form-control" placeholder="Enter Address" cols="10" rows="5" value="">{{$data->address}}</textarea>
                          @error('address')
                             <span style="color: red;">{{$message}}</span>
                         @enderror
